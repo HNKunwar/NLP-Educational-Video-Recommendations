@@ -2,7 +2,8 @@
 *.log
 *.pyc
 __pycache__
-
+glove.6B.100d.txt
+glove.840B.300d.txt
 # Environments 
 .env 
 .venv 
