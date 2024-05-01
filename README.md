@@ -12,7 +12,7 @@ Currently only supports Math, Biology, Chemistry, Physics, Economics, and (some)
 Run index.py to get recommendations in a JSON format with Title, Similarity, and Link fields.
 
 Use test.py flask server to experiment locally. 
-[glove.840B.300d.txt performs much better but slower]
+[glove.840B.300d.txt performs much better but slower - loads entire glove file into memory ~5 Gb]
 
 
 ```
