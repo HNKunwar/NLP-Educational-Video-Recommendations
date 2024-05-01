@@ -7,7 +7,7 @@ Currently only supports Math, Biology, Chemistry, Physics, Economics, and (some)
 
 ## Usage/Examples
 
-```javascript
+```
 
 Run index.py to get recommendations in a JSON format with Title, Similarity, and Link fields.
 
