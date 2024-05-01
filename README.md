@@ -5,8 +5,9 @@ Recommends educational videos based on a string of text by giving 9 videos with 
 
 Currently only supports Math, Biology, Chemistry, Physics, Economics, and (some) Computer Science since it pulls from a database curated for binary classification tasks and uses the Title, Description, & Subtitles for the comparison. (YTvideos.db)
 
-Get YTVideos.db and place into 'api' folder: https://www.kaggle.com/datasets/himanshukunwar/youtube-labeled-educational-videos
-Get GLoVe files here and do the same: https://github.com/stanfordnlp/GloVe
+
+* Get YTVideos.db and place into 'api' folder: https://www.kaggle.com/datasets/himanshukunwar/youtube-labeled-educational-videos
+* Get GLoVe files here and do the same: https://github.com/stanfordnlp/GloVe
 ## Usage/Examples
 
 ```
