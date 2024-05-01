@@ -1,28 +1,48 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
 
-# Flask + Vercel
+# NLP-Educational-Video-Recommendations [Flask Server]
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+Recommends educational videos based on a string of text by giving 9 videos with the highest similarity scores. For ex. text from a PDF/PPT page etc (meant to be for a concatenation of flashcards term definitions but will work for any text string). 
 
-## Demo
+Currently only supports Math, Biology, Chemistry, Physics, Economics, and (some) Computer Science since it pulls from a database curated for binary classification tasks and uses the Title, Description, & Subtitles for the comparison. (YTvideos.db)
 
-https://flask-python-template.vercel.app/
+## Usage/Examples
 
-## How it Works
-
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
-
-## Running Locally
-
-```bash
-npm i -g vercel
-vercel dev
 ```
 
-Your Flask application is now available at `http://localhost:3000`.
+Run index.py to get recommendations in a JSON format with Title, Similarity, and Link fields.
 
-## One-Click Deploy
+Use test.py flask server to experiment locally. 
+[glove.840B.300d.txt performs much better but slower - loads entire glove file into memory ~5 Gb]
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+```
+
+### Example Input
+
+```
+What is the Pythagorean theorem? The Pythagorean theorem states that in a right triangle, the square of the length of the hypotenuse is equal to the sum of the squares of the lengths of the other two sides. How do you find the area of a circle? The area of a circle is calculated using the formula A = πr^2, where A is the area and r is the radius of the circle.
+```
+
+### Example Output 
+Structured by Test.py* 
+
+Index.py gives JSON response in  Title, Similarity, Link format.
+```
+Relevant videos for Math:
+Title: Area of a Rectangle, Triangle, Circle & Sector, Trapezoid, Square, Parallelogram, Rhombus, Geometry
+Similarity: 0.9639917818534853
+Link: https://www.youtube.com/watch?v=JnLDmw3bbuw
+
+Title: How To Calculate The Perimeter of a Semicircle
+Similarity: 0.9637592226629333
+Link: https://www.youtube.com/watch?v=SJAIheSLV3I
+
+Title: Surface Area of a Pyramid & Volume of Square Pyramids & Triangular Pyramids
+Similarity: 0.9596864596096373
+Link: https://www.youtube.com/watch?v=x8wEnG4GURQ
+
+Title: Circles - Area, Circumference, Radius & Diameter Explained!
+Similarity: 0.9591162178071383
+Link: https://www.youtube.com/watch?v=D4nGkWOPb6M
+...
+```
