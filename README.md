@@ -1,4 +1,10 @@
 
+# NLP Youtube Educational Videos Recommendations [Flask Server]
+
+Recommends educational videos based on a string of text by giving 9 videos with the highest similarity scores. For ex. text from a PDF/PPT page etc (meant to be for a concatenation of flashcards term definitions but will work for any text string). 
+
+Currently only supports Math, Biology, Chemistry, Physics, Economics, and (some) Computer Science since it pulls from a database curated for binary classification tasks. (YTvideos.db)
+
 ## Usage/Examples
 
 ```javascript
